@@ -1,6 +1,6 @@
 import styles from "./Container.module.scss";
 
-const container = props => {
+const Container = props => {
   return (
     <div className={styles.container}>
       {props.children}
@@ -8,4 +8,4 @@ const container = props => {
   );
 }
 
-export default container;
+export default Container;
