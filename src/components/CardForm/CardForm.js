@@ -4,18 +4,18 @@ import Button from './../Button/Button';
 import TextInput from './../TextInput/TextInput';
 
 const CardForm = props => {
-    const [title, setTitle] = useState('');
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.action({ title: title });
-        setTitle('');
-    };
+  const [title, setTitle] = useState('');
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.action({ title: title }, props.columndId);
+    setTitle('');
+  };
 
 	return (
-        <form className={styles.cardForm} onSubmit={handleSubmit}>
-            <TextInput value={title} onChange={e => setTitle(e.target.value)} />
-            <Button>Add card</Button>
-        </form>
+    <form className={styles.cardForm} onSubmit={handleSubmit}>
+      <TextInput value={title} onChange={e => setTitle(e.target.value)} />
+      <Button>Add card</Button>
+    </form>
 	);
 };
 
